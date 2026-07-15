@@ -142,6 +142,25 @@ def test_connection_type_sensor_none_when_missing(make_coordinator, mock_api):
     assert entity.native_value is None
 
 
+def test_connection_type_sensor_none_when_empty_or_unknown(
+    device_by_stid, make_coordinator, mock_api
+):
+    """The API can return an empty or unexpected connectionType.
+
+    An enum sensor may only report None or one of its declared options, so
+    anything else must map to None rather than raising a ValueError.
+    """
+    device = device_by_stid(50)
+
+    for raw in ("", "  ", "unknown", "websocket"):
+        data = dict(device["latestData"]["fullData"])
+        data["connectionType"] = raw
+        coordinator = make_coordinator(data)
+        entity = DuuxConnectionTypeSensor(coordinator, mock_api, device)
+
+        assert entity.native_value is None
+
+
 # ---------------------------------------------------------------------------
 # available
 # ---------------------------------------------------------------------------

@@ -321,9 +321,18 @@ class DuuxConnectionTypeSensor(DuuxSensor):
 
     @property
     def native_value(self):
-        """Return the connection type, normalised to match the declared options."""
+        """Return the connection type, normalised to match the declared options.
+
+        The API can hand back an empty or unexpected string (e.g. before the
+        real connection state is known). An enum sensor must only ever report
+        ``None`` or one of its declared options, so anything else maps to
+        ``None`` to avoid a ValueError when the state is written.
+        """
         value = (self.coordinator.data or {}).get(self.entity_description.key)
-        return value.lower() if isinstance(value, str) else None
+        if not isinstance(value, str):
+            return None
+        normalised = value.lower()
+        return normalised if normalised in self.entity_description.options else None
 
 
 class DuuxBora2024TimeRemainingSensor(DuuxTimeRemainingSensor):
