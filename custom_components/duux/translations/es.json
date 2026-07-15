@@ -18,6 +18,28 @@
         }
     },
     "entity": {
+        "fan": {
+            "air_purifier_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "Auto": "Automático"
+                        }
+                    }
+                }
+            },
+            "whisper_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "natural": "Viento natural",
+                            "night": "Noche",
+                            "normal": "Normal"
+                        }
+                    }
+                }
+            }
+        },
         "binary_sensor": {
             "connected": {
                 "name": "Conectado"
@@ -28,19 +50,34 @@
         },
         "select": {
             "fan_speed": {
-                "name": "Velocidad del ventilador"
+                "name": "Velocidad del ventilador",
+                "state": {
+                    "low": "Baja",
+                    "high": "Alta"
+                }
             },
             "horizontal_swing": {
-                "name": "Oscilación horizontal"
+                "name": "Oscilación horizontal",
+                "state": {
+                    "Off": "Apagado"
+                }
             },
             "spray_volume": {
-                "name": "Volumen de nebulización"
+                "name": "Volumen de nebulización",
+                "state": {
+                    "Low": "Baja",
+                    "Mid": "Media",
+                    "High": "Alta"
+                }
             },
             "timer": {
                 "name": "Temporizador"
             },
             "vertical_swing": {
-                "name": "Oscilación vertical"
+                "name": "Oscilación vertical",
+                "state": {
+                    "Off": "Apagado"
+                }
             }
         },
         "sensor": {

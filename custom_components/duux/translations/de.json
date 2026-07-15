@@ -18,6 +18,28 @@
         }
     },
     "entity": {
+        "fan": {
+            "air_purifier_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "Auto": "Automatisch"
+                        }
+                    }
+                }
+            },
+            "whisper_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "natural": "Natürlicher Wind",
+                            "night": "Nacht",
+                            "normal": "Normal"
+                        }
+                    }
+                }
+            }
+        },
         "binary_sensor": {
             "connected": {
                 "name": "Verbunden"
@@ -28,19 +50,34 @@
         },
         "select": {
             "fan_speed": {
-                "name": "Lüftergeschwindigkeit"
+                "name": "Lüftergeschwindigkeit",
+                "state": {
+                    "low": "Niedrig",
+                    "high": "Hoch"
+                }
             },
             "horizontal_swing": {
-                "name": "Horizontale Oszillation"
+                "name": "Horizontale Oszillation",
+                "state": {
+                    "Off": "Aus"
+                }
             },
             "spray_volume": {
-                "name": "Sprühvolumen"
+                "name": "Sprühvolumen",
+                "state": {
+                    "Low": "Niedrig",
+                    "Mid": "Mittel",
+                    "High": "Hoch"
+                }
             },
             "timer": {
                 "name": "Timer"
             },
             "vertical_swing": {
-                "name": "Vertikale Oszillation"
+                "name": "Vertikale Oszillation",
+                "state": {
+                    "Off": "Aus"
+                }
             }
         },
         "sensor": {

@@ -18,6 +18,28 @@
         }
     },
     "entity": {
+        "fan": {
+            "air_purifier_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "Auto": "Automatisch"
+                        }
+                    }
+                }
+            },
+            "whisper_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "natural": "Natuurlijke wind",
+                            "night": "Nacht",
+                            "normal": "Normaal"
+                        }
+                    }
+                }
+            }
+        },
         "binary_sensor": {
             "connected": {
                 "name": "Verbonden"
@@ -28,19 +50,34 @@
         },
         "select": {
             "fan_speed": {
-                "name": "Ventilatorsnelheid"
+                "name": "Ventilatorsnelheid",
+                "state": {
+                    "low": "Laag",
+                    "high": "Hoog"
+                }
             },
             "horizontal_swing": {
-                "name": "Horizontale zwenking"
+                "name": "Horizontale zwenking",
+                "state": {
+                    "Off": "Uit"
+                }
             },
             "spray_volume": {
-                "name": "Sproeivolume"
+                "name": "Sproeivolume",
+                "state": {
+                    "Low": "Laag",
+                    "Mid": "Middel",
+                    "High": "Hoog"
+                }
             },
             "timer": {
                 "name": "Timer"
             },
             "vertical_swing": {
-                "name": "Verticale zwenking"
+                "name": "Verticale zwenking",
+                "state": {
+                    "Off": "Uit"
+                }
             }
         },
         "sensor": {

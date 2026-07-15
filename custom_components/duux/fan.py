@@ -252,6 +252,8 @@ class DuuxFan(CoordinatorEntity, FanEntity):
 class DuuxWhisperFlexTwoFan(DuuxFan):
     """Representation of a DUUX Whisper Flex 2 fan."""
 
+    _attr_translation_key = "whisper_fan"
+
     def __init__(
         self,
         coordinator,
@@ -268,6 +270,8 @@ class DuuxWhisperFlexTwoFan(DuuxFan):
 
 class DuuxWhisperFlexElevateFan(DuuxFan):
     """Representation of a DUUX Whisper Flex Elevatefan."""
+
+    _attr_translation_key = "whisper_fan"
 
     def __init__(
         self,
@@ -307,6 +311,8 @@ class DuuxWhisperFlexElevateFan(DuuxFan):
 class DuuxWhisperFlexUltimateFan(DuuxFan):
     """Representation of a DUUX Whisper Flex Ultimate fan (sensorTypeId 40)."""
 
+    _attr_translation_key = "whisper_fan"
+
     def __init__(self, coordinator, api, device):
         super().__init__(coordinator, api, device)
 
@@ -322,6 +328,8 @@ class DuuxWhisperFlexUltimateFan(DuuxFan):
 
 class DuuxWhisperFlexFan(DuuxFan):
     """Representation of a DUUX Whisper Flex 2 fan."""
+
+    _attr_translation_key = "whisper_fan"
 
     def __init__(
         self,
@@ -574,6 +582,8 @@ class DuuxFanAutoDiscovery(DuuxFan):
 
 class DuuxAirPurifierFan(DuuxFan):
     """Representation of a Duux air purifier fan."""
+
+    _attr_translation_key = "air_purifier_fan"
 
     SPEED_RANGE = (1, 4)
 
