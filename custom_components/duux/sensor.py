@@ -323,7 +323,7 @@ class DuuxConnectionTypeSensor(DuuxSensor):
     def native_value(self):
         """Return the connection type, normalised to match the declared options."""
         value = (self.coordinator.data or {}).get(self.entity_description.key)
-        return value.lower() if isinstance(value, str) else None
+        return value.lower() if value else None
 
 
 class DuuxBora2024TimeRemainingSensor(DuuxTimeRemainingSensor):
